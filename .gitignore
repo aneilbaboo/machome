@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But not these...
+!.bash_profile
+!.emacs
+!.profile
+!.emacs.d/
+!bin/
+
+# Ignore these specific files
+.emacs.d/ac-comphist.dat
+
