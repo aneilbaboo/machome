@@ -20,14 +20,12 @@
 (setq js-indent-level 2)
 
 ;; yasnippet
-(add-to-list 'load-path
-              "~/.emacs.d/plugins/yasnippet")
-(require 'yasnippet) ;; not yasnippet-bundle
-(setq yas/snippet-dirs "~/.emacs.d/plugins/yasnippet/snippets")
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets/text-mode")
-(add-to-list 'ac-sources 'ac-source-yasnippet)
-(yas/global-mode 1)
+;;(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+;;(require 'yasnippet) ;; not yasnippet-bundle
+;;(setq yas/snippet-dirs "~/.emacs.d/plugins/yasnippet/snippets")
+;;(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets/text-mode")
+;;(add-to-list 'ac-sources 'ac-source-yasnippet)
+;;(yas/global-mode 1)
 
 ;; start lintnode
 (start-process "lintnode" "lintnode" "node" "~/.emacs.d/plugins/lintnode/app.js" "--set" "sloppy:true")
