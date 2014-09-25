@@ -6,7 +6,7 @@ if hash mkvirtualenv 2>/dev/null; then
        mkvirtualenv "$virtualenv_name"
        echo "\"pip install -r requirements.txt\" to install libraries"
     fi
-    if [ -f "init.env" ]; then
-       source init.env
+    if [ -f ".env" ]; then
+       source .env
     fi
 fi
