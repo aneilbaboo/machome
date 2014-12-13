@@ -52,11 +52,11 @@ export PATH="${PATH}:${GOROOT}/bin"
 export CPP=cpp; export CC=clang; export CXX=clang++
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
-# The next line updates PATH for the Google Cloud SDK.
-source /Users/aneil/bin/google-cloud-sdk/path.bash.inc
 
 # The next line enables bash completion for gcloud.
-source ~/bin/google-cloud-sdk/completion.bash.inc
+if [ -f "~/bin/google-cloud-sdk/completion.bash.inc" ]; then
+    source ~/bin/google-cloud-sdk/completion.bash.inc
+fi
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 
