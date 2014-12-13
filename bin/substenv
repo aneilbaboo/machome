@@ -1,0 +1,15 @@
+#!/bin/bash
+function usage() {
+    echo "usage: substenv file"
+    echo "substitute value of environment variables into file using this syntax: {VAR}"
+    echo "quote curly braces thus: {{"
+}
+if [ "$1" == "-h" ]; then 
+   usage
+   exit 0
+elif [ "$1" == "" ]; then
+    usage
+    exit 1
+else
+    contents=\"\"\"`cat $file`\"\"\"; python  -c "import os;print $contents.format(**os.environ)"
+fi
