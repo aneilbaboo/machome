@@ -49,9 +49,12 @@ export GOROOT="/usr/local/go/"
 export GOPATH="$HOME/go"
 export PATH="${PATH}:${GOROOT}/bin"
 
-export CPP=cpp; export CC=clang; export CXX=clang++
+#export CPP=cpp; export CC=clang; export CXX=clang++
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+# POSTGRES CONFIG
+export PGDATA=/usr/local/var/postgres/
 
 # The next line enables bash completion for gcloud.
 if [ -f "~/bin/google-cloud-sdk/completion.bash.inc" ]; then
