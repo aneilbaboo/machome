@@ -70,3 +70,8 @@ pathadd() {
         PATH="${PATH:+"$PATH:"}$1"
     fi
 }
+
+if [[ -x `which hub` ]]; then
+    alias git=hub
+fi 
+
