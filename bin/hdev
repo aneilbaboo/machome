@@ -9,5 +9,5 @@ if [ "$1" ]; then
         echo "Unable to find Heroku remote named 'prod' in your current git repo." 
     fi
 else
-    echo "usage: hprod {heroku_command} [options]"
+    echo "usage: hdev {heroku_command} [options]"
 fi
