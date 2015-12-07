@@ -10,4 +10,5 @@
 
 # Ignore these specific files
 .emacs.d/ac-comphist.dat
+.emacs.d/plugins/yasnippet/*
 
