@@ -36,7 +36,7 @@ printf "\e]0;${user}@${host}\a";
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+# export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PYTHONSTARTUP=~/.pythonrc.py
 
 # Load RVM into a shell session *as a function*
@@ -52,6 +52,10 @@ export PATH="${PATH}:${GOROOT}/bin"
 #export CPP=cpp; export CC=clang; export CXX=clang++
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+# RBENV
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # POSTGRES CONFIG
 export PGDATA=/usr/local/var/postgres/
@@ -71,6 +75,7 @@ pathadd() {
     fi
 }
 
+
 if [[ -x `which hub` ]]; then
     alias git=hub
 fi 
@@ -78,6 +83,10 @@ fi
 # bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
+
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+    . $LUNCHY_DIR/lunchy-completion.bash
 fi
 
 # enable aquamac command line
