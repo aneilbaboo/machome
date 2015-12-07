@@ -1,6 +1,8 @@
 [submodule ".emacs.d/major-modes/markdown-mode"]
 	path = .emacs.d/major-modes/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+        ignore = dirty
 [submodule ".emacs.d/plugins/yasnippet"]
 	path = .emacs.d/plugins/yasnippet
 	url = https://github.com/capitaomorte/yasnippet
+        ignore = dirty
