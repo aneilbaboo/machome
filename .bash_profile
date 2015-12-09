@@ -53,10 +53,6 @@ export PATH="${PATH}:${GOROOT}/bin"
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-# RBENV
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # POSTGRES CONFIG
 export PGDATA=/usr/local/var/postgres/
 
@@ -83,10 +79,13 @@ fi
 # bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
+fi
 
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-    . $LUNCHY_DIR/lunchy-completion.bash
+if [ -f "`gem which lunchy 2>/dev/null`" ]; then
+    LUNCHY_DIR = $(dirname `gem which lunchy 2>/dev/null`)
+    if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
+        . $LUNCHY_DIR/lunchy-completion.bash
+    fi
 fi
 
 # enable aquamac command line
@@ -99,3 +98,4 @@ function aquamacs
     done
     open -a /Applications/Aquamacs.app "$@"
 }
+
