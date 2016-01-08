@@ -1,0 +1,14 @@
+#!/bin/bash
+remote="$1"
+app=`git remote -v | awk -v pattern="^$remote" '{ if (match($1, pattern) && match($2, "\:(.*)\.git")) { print substr($2, RSTART+1,  RLENGTH-5); exit 1;}}'`
+
+if [ "$2" ]; then
+    if [ "$app" ]; then
+        heroku $2 --app "$app" $3 $4 $5 $6 $7 $8 $9
+    else
+        echo "Unable to find Heroku remote named '$remote' in your current git repo." 
+    fi
+else
+    echo "usage: h {remote_name} {heroku_command} [options]"
+    echo "Runs heroku command on heroku instance referenced by the git remote_name"
+fi
