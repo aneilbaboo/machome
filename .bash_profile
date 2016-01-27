@@ -99,3 +99,4 @@ function aquamacs
     open -a /Applications/Aquamacs.app "$@"
 }
 
+source ~/.aliases/rails
