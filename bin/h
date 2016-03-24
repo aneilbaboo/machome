@@ -4,7 +4,7 @@ app=`git remote -v | awk -v pattern="^$remote" '{ if (match($1, pattern) && matc
 
 if [ "$2" ]; then
     if [ "$app" ]; then
-        heroku $2 --app "$app" $3 $4 $5 $6 $7 $8 $9
+        heroku "${@:2}" --app "$app" 
     else
         echo "Unable to find Heroku remote named '$remote' in your current git repo." 
     fi
