@@ -1,6 +1,11 @@
 #!/bin/bash
 remote="$1"
-app=`git remote -v | awk -v pattern="^$remote" '{ if (match($1, pattern) && match($2, "\:(.*)\.git")) { print substr($2, RSTART+1,  RLENGTH-5); exit 1;}}'`
+app=`git remote -v | awk -v pattern="^$remote" '{ if (match($1, pattern) && match($2, "git@.*") && match($2, "\:(.*)\.git")) { print substr($2, RSTART+1,  RLENGTH-5); exit 1;}}'`
+if [ "${app}" == "" ]; then
+    # regex is written in this hack way ("\.com/.*\.git" instead of "[^/]*.git") because Apple awk doesn't support character sets
+    app=`git remote -v | awk -v pattern="^$remote" '{ if (match($1, pattern) && match($2, "https") && match($2, "\.com/.*\.git")) { print substr($2, RSTART+5,  RLENGTH-9); exit 1;}}'`
+fi
+
 
 if [ "$2" ]; then
     if [ "$app" ]; then
