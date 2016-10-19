@@ -3,8 +3,8 @@
 (setq standard-indent 2)
 (setq-default indent-tabs-mode nil)
 (put 'upcase-region 'disabled nil)
-(add-to-list 'load-path "~/.emacs.d/")
 ; Load the default configuration
+(add-to-list 'load-path "~/.emacs.d/plugins")
 (require 'auto-complete-config)
 ; Make sure we can find the dictionaries
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
