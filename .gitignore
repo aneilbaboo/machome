@@ -2,7 +2,6 @@
 *
 
 # But not these...
-!.bash_profile
 !.emacs
 !.profile
 !.emacs.d/
