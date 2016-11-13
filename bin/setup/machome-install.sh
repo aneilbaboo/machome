@@ -2,30 +2,39 @@
 
 cd ~
 
-if [ ! -f `which brew` ]; then
-    echo "Installing brew"
+if [ -z "`which brew`" ]; then
+    echo "
+Installing brew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if [ ! -f `which rvm` ]; then
-    echo "Installing rvm"    
+if [ -z "`which rvm`" ]; then
+    echo "
+Installing rvm"    
     \curl -sSL https://get.rvm.io | bash -s stable --ruby
 fi
 
-if [ ! -f `which hub` ]; then
-    echo "Installing hub - helps you win at git"
+if [ -z "`which hub`" ]; then
+    echo "
+Installing hub - helps you win at git"
     brew install hub
 fi
 
-if [ ! -f `which complete_bundle_bash_command` ]; then
-    echo "Installing bash bundler completion"
+if [ -z "`which complete_bundle_bash_command`" ]; then
+    echo "
+Installing bash bundler completion"
     gem install bundler_bash_completion
 fi
 
+touch ~/.bash_profile
 if [ -z "`grep 'source ~/.machome' ~/.bash_profile`" ]; then
-    echo "Adding .bash_profile"
+    echo "
+Adding machome to .bash_profile"
     echo "
 source ~/.machome/all.bash
 " >> ~/.bash_profile
 fi
 
+echo "
+Finished installing machome.  Please restart your terminal.
+"
