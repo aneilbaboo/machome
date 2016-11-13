@@ -4,10 +4,10 @@
 (setq-default indent-tabs-mode nil)
 (put 'upcase-region 'disabled nil)
 ; Load the default configuration
-(add-to-list 'load-path "~/.emacs.d/plugins")
+(add-to-list 'load-path "~/.machome/emacs/plugins")
 (require 'auto-complete-config)
 ; Make sure we can find the dictionaries
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
+(add-to-list 'ac-dictionary-directories "~/.machome/emacs/ac-dict/")
 ; Use dictionaries by default
 (setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
 (global-auto-complete-mode t)
@@ -20,21 +20,21 @@
 (setq js-indent-level 2)
 
 ;; yasnippet
-;;(add-to-list 'load-path "~/.machome/emacsplugins/yasnippet")
+;;(add-to-list 'load-path "~/.machome/emacs/plugins/yasnippet")
 ;;(require 'yasnippet) ;; not yasnippet-bundle
-;;(setq yas/snippet-dirs "~/.machome/emacsplugins/yasnippet/snippets")
-;;(yas/load-directory "~/.machome/emacsplugins/yasnippet/snippets/text-mode")
+;;(setq yas/snippet-dirs "~/.machome/emacs/plugins/yasnippet/snippets")
+;;(yas/load-directory "~/.machome/emacs/plugins/yasnippet/snippets/text-mode")
 ;;(add-to-list 'ac-sources 'ac-source-yasnippet)
 ;;(yas/global-mode 1)
 
 ;; start lintnode
-(start-process "lintnode" "lintnode" "node" "~/.machome/emacsplugins/lintnode/app.js" "--set" "sloppy:true")
+(start-process "lintnode" "lintnode" "node" "~/.machome/emacs/plugins/lintnode/app.js" "--set" "sloppy:true")
 
 ;; lintnode - node.js syntax checking
-;;(add-to-list 'load-path "~/.machome/emacsplugins/lintnode")
+;;(add-to-list 'load-path "~/.machome/emacs/plugins/lintnode")
 ;;(require 'flymake-jslint)
 ;; Make sure we can find the lintnode executable
-;;(setq lintnode-location "~/.machome/emacsplugins/lintnode")
+;;(setq lintnode-location "~/.machome/emacs/plugins/lintnode")
 ;; JSLint can be... opinionated
 ;;(setq lintnode-jslint-excludes (list 'nomen 'undef 'plusplus 'onevar 'white))
 ;; Start the server when we first open a js file and start checking
@@ -45,7 +45,7 @@
 ;;(setq lintnode-jslint-set "sloppy:true")
 
 
-(add-to-list 'load-path "~/.machome/emacsminor-modes")
+(add-to-list 'load-path "~/.machome/emacs/minor-modes")
 ;; mdfind mode:
 (require 'mdfind)
 
@@ -54,7 +54,7 @@
 ;;(require 'flymake-cursor)
 
 ;; js-comint - REPL for javascript
-(add-to-list 'load-path "~/.machome/emacsplugins")
+(add-to-list 'load-path "~/.machome/emacs/plugins")
 (require 'js-comint)
 ;; Use node as our repl
 (setq inferior-js-program-command "node")
@@ -71,7 +71,7 @@
 
 
 ;; MARKDOWN major mode
-(add-to-list 'load-path "~/.machome/emacsmajor-modes/markdown-mode")
+(add-to-list 'load-path "~/.machome/emacs/major-modes/markdown-mode")
 (defun my-markdown-mode-hooks () 
   (auto-fill-mode 0)
   )
