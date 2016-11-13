@@ -17,6 +17,8 @@ Following the setup puts two directories in your home directory:
 cd ~
 git init && git remote add origin git@github.com:aneilbaboo/machome && git fetch && git checkout master
 ```
+
+### If you have trouble with cloning machome...
 Note: you may need to remove some files and directories for this to work:
 
 Carefully read the following before executing it!
