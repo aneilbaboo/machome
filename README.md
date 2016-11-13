@@ -16,6 +16,7 @@ Following the setup puts two directories in your home directory:
 ```shell
 cd ~
 git init && git remote add origin git@github.com:aneilbaboo/machome && git fetch && git checkout master
+machome unedit
 ```
 Note: you may need to remove some files and directories for this to work:
 
