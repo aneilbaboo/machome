@@ -37,7 +37,7 @@ rm ~/README.md
 ~/.machome/install.sh
 ```
 
-## Restart your terminal and hide machome .git prompt
+## Restart your terminal, then:
 
 ```
 machome unedit
