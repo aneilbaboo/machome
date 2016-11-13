@@ -1,6 +1,6 @@
 # Setup
 
-## Clone machoem to home directory
+## Clone machome to home directory
 
 ```
 git init && git remote add origin git@github.com:aneilbaboo/machome && git fetch && git checkout master
