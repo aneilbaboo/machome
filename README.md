@@ -6,8 +6,8 @@ features.
 
 Following the setup puts two directories in your home directory:
 
-~/.machome - contains files required for .bash_profile
-~/bin - useful scripts available on the path
+* ~/.machome - contains files required for .bash_profile
+* ~/bin - useful scripts available on the path
 
 # Setup
 
