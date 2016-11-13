@@ -26,21 +26,28 @@ Installing bash bundler completion"
     gem install bundler_bash_completion
 fi
 
-touch ~/.emacs
-if [ -z "`grep '(load "~/.machome/emacs.el")' ~/.emacs`" ]; then
+
+if [ -z "`grep -s '~/.machome/emacs.el' ~/.emacs`" ]; then
     echo "Adding ~/.machome/emacs.el to ~/.emacs"
-    echo '
+    cat << EOF >> ~/.emacs
 (load "~/.machome/emacs.el")
-' >> ~/.emacs
+EOF
 fi
 
-touch ~/.bash_profile
-if [ -z "`grep 'source ~/.machome' ~/.bash_profile`" ]; then
-    echo "
-Adding machome to .bash_profile"
-    echo "
+
+if [ -z "`grep -s .machome/pythonrc.py ~/.pythonrc.py`" ]; then
+    echo "Adding .machome/pythonrc.py to ~/.pythonrc.py"
+    cat << EOF >> ~/.pythonrc.py
+import imp
+imp.load_source("pythonrc", ".machome/pythonrc.py")
+EOF
+fi
+
+if [ -z "`grep -s 'source ~/.machome' ~/.bash_profile`" ]; then
+    echo "Adding machome to .bash_profile"
+    cat << EOF >> ~/.bash_profile
 source ~/.machome/all.bash
-" >> ~/.bash_profile
+EOF
 fi
 
 echo "
