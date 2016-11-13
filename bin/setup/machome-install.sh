@@ -26,6 +26,14 @@ Installing bash bundler completion"
     gem install bundler_bash_completion
 fi
 
+touch ~/.emacs
+if [ -z "`grep '(load "~/.machome/emacs.el")' ~/.emacs`" ]; then
+    echo "Adding ~/.machome/emacs.el to ~/.emacs"
+    echo '
+(load "~/.machome/emacs.el")
+' >> ~/.emacs
+fi
+
 touch ~/.bash_profile
 if [ -z "`grep 'source ~/.machome' ~/.bash_profile`" ]; then
     echo "
@@ -36,5 +44,4 @@ source ~/.machome/all.bash
 fi
 
 echo "
-Finished installing machome.  Please restart your terminal.
-"
+Finished installing machome.  Please restart your terminal."

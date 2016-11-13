@@ -2,7 +2,6 @@
 *
 
 # But not these...
-!.emacs
 !.profile
 !.emacs.d/*.*
 !.emacs.d/**/*.*
@@ -10,5 +9,5 @@
 !.machome/
 !.machome/*.*
 !.machome/**/*.*
-.gitignore
+!.gitignore
 
