@@ -34,11 +34,7 @@ rm ~/README.md
 ## Install machome 
 
 ```shell
-~/.machome/install.sh
+source ~/.machome/install.bash
 ```
 
-## Restart your terminal, then:
 
-```
-machome unedit
-```

@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [ "$0" != "-bash" ]; then
+    echo "Please run this command instead:"
+    echo "  source ~/.machome/install.bash"
+    exit -1
+fi
+
+source ~/.machome/all.bash
+
 cd ~
 
 if [ -z "`which brew`" ]; then
@@ -50,5 +58,18 @@ source ~/.machome/all.bash
 EOF
 fi
 
+if [ -d ~/.git ]; then
+    machome unedit
+fi
+
 echo "
-Finished installing machome.  Please restart your terminal."
+Machome is ready.  Modifications have been made to your bash environment:
+  * Bash prompt coloring
+  * git autocompletion
+  * bundler autocompletion
+  * Scripts in ~/bin are on the PATH
+  * Several emacs plugins in .machome/emacs.el and .machome/emacs/
+  * Python autocompletion (see .pythonrc.py)
+
+Please restart your other terminal windows.
+"
