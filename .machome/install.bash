@@ -20,6 +20,7 @@ if [ -z "`which rvm`" ]; then
     echo "
 Installing rvm"    
     \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    cp ~/.machome/rvm_hooks/* ~/.rvm/hooks/
 fi
 
 if [ -z "`which hub`" ]; then

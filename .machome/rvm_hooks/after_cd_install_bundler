@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ ! -z "$rvm_ruby_string" ] && [ "$rvm_ruby_string" != "system" ] && [ -z "`rvm list | grep $rvm_ruby_string`" ]; then
+   echo "Install $rvm_ruby_string? (yes/no)"
+   read response
+   if [[ $response == y* ]] || [[ $response == Y* ]]; then
+       rvm install $rvm_ruby_string
+       installed="true"
+   fi
+else
+   installed="true"
+fi
+
+if [ $installed="true" ]; then
+    bundler_path="`which bundler`"
+    if [ -f "Gemfile" ]; then
+        if [[ -z "$bundler_path" ]] || [[ "$bundler_path" == /usr/local* ]]; then
+            gem install bundler
+            echo "Gemfile detected.  Install gems? (yes/no)"
+            read response
+            if [[ $response == y* ]] || [[ $response == Y* ]]; then
+                echo "Installing gems..."
+                bundle install
+            fi
+        fi
+    fi
+fi
