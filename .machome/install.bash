@@ -6,8 +6,6 @@ if [ "$0" != "-bash" ]; then
     exit -1
 fi
 
-#source ~/.machome/all.bash
-
 cd ~
 
 if [ -z "`which brew`" ]; then
