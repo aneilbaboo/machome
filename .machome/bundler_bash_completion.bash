@@ -1,6 +1,4 @@
-if [ ! -f `which complete_bundle_bash_command` ]; then
-    echo "Bundler bash completion not installed"
-    echo "Please run: gem install bundler_bash_completion"
-    echo "            or ~/.machome/setup.sh"
+if [ -f `which complete_bundle_bash_command` ]; then
+    eval "$(complete_bundle_bash_command init)"
 fi
-eval "$(complete_bundle_bash_command init)"
+
