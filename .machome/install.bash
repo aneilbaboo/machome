@@ -6,7 +6,7 @@ if [ "$0" != "-bash" ]; then
     exit -1
 fi
 
-source ~/.machome/all.bash
+#source ~/.machome/all.bash
 
 cd ~
 
@@ -62,6 +62,8 @@ fi
 if [ -d ~/.git ]; then
     machome unedit
 fi
+
+source .machome/all.bash
 
 echo "
 Machome is ready.  Modifications have been made to your bash environment:
