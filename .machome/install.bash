@@ -46,7 +46,8 @@ if [ -z "`grep -s .machome/pythonrc.py ~/.pythonrc.py`" ]; then
     echo "Adding .machome/pythonrc.py to ~/.pythonrc.py"
     cat << EOF >> ~/.pythonrc.py
 import imp
-imp.load_source("pythonrc", ".machome/pythonrc.py")
+from os import path
+imp.load_source("pythonrc", path.join(path.expanduser("~"),".machome/pythonrc.py"))
 EOF
 fi
 
