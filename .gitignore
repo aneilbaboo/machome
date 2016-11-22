@@ -14,3 +14,8 @@
 !.machome/**/*
 !.gitignore
 
+
+.machome/emacs/ac-comphist.dat
+
+SessionDesktop.el
+.profile
