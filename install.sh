@@ -2,7 +2,7 @@
 echo "Trying to clone using SSH"
 
 git clone git@github.com:aneilbaboo/machome.git ~/.machome
-if [ $0 -ne 0 ]; then
+if [ $? -ne 0 ]; then
     git clone https://github.com/aneilbaboo/machome.git ~/.machome
 fi
 
