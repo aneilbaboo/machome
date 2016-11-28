@@ -3,6 +3,7 @@ echo "Trying to clone using SSH"
 
 git clone git@github.com:aneilbaboo/machome.git ~/.machome
 if [ $? -ne 0 ]; then
+    echo "Cloning using HTTP"
     git clone https://github.com/aneilbaboo/machome.git ~/.machome
 fi
 
