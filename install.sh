@@ -1,13 +1,21 @@
-set -e
-echo "Trying to clone using SSH"
 
-git clone git@github.com:aneilbaboo/machome.git ~/.machome
-if [ $? -ne 0 ]; then
-    echo "Cloning using HTTP"
-    git clone https://github.com/aneilbaboo/machome.git ~/.machome
+if [ -d ~/.machome ]; then
+   echo "Machome directory already exists.  Updating..."
+    ~/.machome/bin/machome update
+else
+    echo "Trying to clone using SSH"
+    git clone git@github.com:aneilbaboo/machome.git ~/.machome
+    if [ $? -ne 0 ]; then
+	echo "Cloning using HTTP"
+	git clone https://github.com/aneilbaboo/machome.git ~/.machome
+    fi
 fi
 
-echo "Moving to home directory"
+if [ ! -d ~/.machome ]; then
+  echo "Failed to clone machome"
+  exit 1
+fi
+
 cd ~
 
 echo "Checking for homebrew..."
