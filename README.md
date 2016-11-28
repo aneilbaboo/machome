@@ -7,7 +7,7 @@ features.
 # Install
 
 ```shell
-source $(curl -fsSL https://raw.githubusercontent.com/aneilbaboo/machome/master/install.sh)
+eval "$(curl -fsSL https://raw.githubusercontent.com/aneilbaboo/machome/master/install.sh)"
 ```
 
 

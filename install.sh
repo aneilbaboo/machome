@@ -1,5 +1,10 @@
 
-git clone https://github.com/aneilbaboo/machome.git ~/.machome
+echo "Trying to clone using SSH"
+
+git clone git@github.com:aneilbaboo/machome.git ~/.machome
+if [ $0 -ne 0 ]; then
+    git clone https://github.com/aneilbaboo/machome.git ~/.machome
+fi
 
 cd ~
 
@@ -16,6 +21,8 @@ Installing rvm"
 fi
 
 cp ~/.machome/rvm_hooks/* ~/.rvm/hooks/
+
+rvm use default
 
 if [ -z "`which hub`" ]; then
     echo "
