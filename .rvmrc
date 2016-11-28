@@ -1,3 +1,0 @@
-if hash deactivate 2>/dev/null; then
-   deactivate
-fi
