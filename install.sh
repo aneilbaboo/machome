@@ -9,17 +9,22 @@ fi
 
 cd ~
 
+echo "Checking for homebrew..."
 if [ -z "`which brew`" ]; then
     echo "
 Installing brew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    echo "Homebrew already installed"
 fi
 
+echo "Checking for GPG..."
 if [ "`which gpg`" != "" ]; then
     echo "Trusting rvm author Michal Papis <mpapis@gmail.com>"
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 fi
 
+echo "Checking for RVM..."
 if [ -z "`which rvm`" ]; then
     echo "
 Installing rvm"    
