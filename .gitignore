@@ -1,21 +1,3 @@
-# Ignore everything
-*
-*.*~
-
-# But not these...
-!.profile
-!.emacs.d/*.*
-!.emacs.d/**/*.*
-!bin/
-!.machome/
-!.machome/*
-!.machome/*.*
-!.machome/**/*.*
-!.machome/**/*
-!.gitignore
-
-
-.machome/emacs/ac-comphist.dat
-
+emacs/ac-comphist.dat
 SessionDesktop.el
-.profile
+
