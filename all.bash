@@ -5,7 +5,7 @@ export PGDATA=/usr/local/var/postgres/
 
 source ~/.machome/pathadd.bash
 pathadd "/usr/local/bin:/usr/sbin:/bin:/sbin:/usr/bin:/usr/local/sbin"
-pathadd "~/bin"
+pathadd "$HOME/.machome/bin"
 
 source ~/.machome/prompt.bash
 source ~/.machome/machelp.bash

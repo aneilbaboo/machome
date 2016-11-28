@@ -2,9 +2,7 @@
 command=$1
 
 case $command in
-edit) mv ~/.machome.git ~/.git
-        ;;
-unedit) mv ~/.git ~/.machome.git 
-        ;;
-*) echo "usage: machome [edit | unedit]"
+update) git -C ~/.machome pull
+    ;;
+*) echo "usage: machome [update]"
 esac
