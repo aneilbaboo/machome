@@ -27,6 +27,12 @@ source ~/.machome/pathadd.bash
 source ~/.machome/rvm.bash
 
 rvm use default
+if [ $? -ne 0 ]; then
+   echo "Installing a default rvm ruby version"
+   ruby_version=`ruby --version | grep -o '[0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}'`
+   rvm install $ruby_version
+   rvm --default use $ruby_version
+fi
 
 if [ -z "`which hub`" ]; then
     echo "
