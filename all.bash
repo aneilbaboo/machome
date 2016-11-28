@@ -1,11 +1,11 @@
 export EDITOR=emacs
-export PATH="$PATH:/usr/local/bin:/usr/sbin:/bin:/sbin:/usr/bin:/usr/local/sbin"
-export PATH=${PATH}:~/bin
 export MANPATH=/usr/local/git/man:$MANPATH
-
-
 export PYTHONSTARTUP=~/.pythonrc.py # add readline capabilities to python commandline interpreter
 export PGDATA=/usr/local/var/postgres/
+
+source ~/.machome/pathadd.bash
+pathadd "/usr/local/bin:/usr/sbin:/bin:/sbin:/usr/bin:/usr/local/sbin"
+pathadd "~/bin"
 
 source ~/.machome/prompt.bash
 source ~/.machome/machelp.bash
@@ -23,10 +23,4 @@ source ~/.machome/bundler_bash_completion.bash
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
-
-pathadd() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
-    fi
-}
 

@@ -23,6 +23,9 @@ fi
 
 cp ~/.machome/rvm_hooks/* ~/.rvm/hooks/
 
+source ~/.machome/pathadd.bash
+source ~/.machome/rvm.bash
+
 rvm use default
 
 if [ -z "`which hub`" ]; then
