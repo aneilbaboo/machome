@@ -15,6 +15,11 @@ Installing brew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+if [ "`which gpg`" != "" ]; then
+    echo "Trusting rvm author Michal Papis <mpapis@gmail.com>"
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+fi
+
 if [ -z "`which rvm`" ]; then
     echo "
 Installing rvm"    
