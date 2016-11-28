@@ -1,10 +1,4 @@
-#!/bin/bash
-
-if [ "$0" != "-bash" ]; then
-    echo "Please run this command instead:"
-    echo "  source ~/.machome/install.bash"
-    exit -1
-fi
+git clone https://github.com/aneilbaboo/machome.git ~/.machome
 
 cd ~
 
@@ -18,8 +12,9 @@ if [ -z "`which rvm`" ]; then
     echo "
 Installing rvm"    
     \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    cp ~/.machome/rvm_hooks/* ~/.rvm/hooks/
 fi
+
+cp ~/.machome/rvm_hooks/* ~/.rvm/hooks/
 
 if [ -z "`which hub`" ]; then
     echo "
