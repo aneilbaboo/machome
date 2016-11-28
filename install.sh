@@ -1,4 +1,4 @@
-
+set -e
 echo "Trying to clone using SSH"
 
 git clone git@github.com:aneilbaboo/machome.git ~/.machome
