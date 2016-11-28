@@ -7,6 +7,7 @@ if [ $? -ne 0 ]; then
     git clone https://github.com/aneilbaboo/machome.git ~/.machome
 fi
 
+echo "Moving to home directory"
 cd ~
 
 echo "Checking for homebrew..."
