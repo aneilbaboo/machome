@@ -18,6 +18,7 @@ source ~/.machome/colorman.bash
 source ~/.machome/rails.bash
 source ~/.machome/sshprompt.bash
 source ~/.machome/bundler_bash_completion.bash
+source ~/.machome/nvm.bash
 
 # bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
