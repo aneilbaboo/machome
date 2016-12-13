@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z "$RVM_CD_ORIGINAL_PATH" ]; then
+  export RVM_CD_ORIGINAL_PATH="$PATH"
+fi
+
+if [ -f "./.localpath" ]; then
+  eval "export PATH=$RVM_CD_ORIGINAL_PATH:`cat .localpath 2>/dev/null`" 
+else
+  export PATH=$RVM_CD_ORIGINAL_PATH
+fi
+
