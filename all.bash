@@ -9,8 +9,10 @@ pathadd "$HOME/.machome/bin"
 
 source ~/.machome/prompt.bash
 source ~/.machome/machelp.bash
+source ~/.machome/python.bash
 source ~/.machome/goconfig.bash
 source ~/.machome/googlecloud.bash
+source ~/.machome/nvm.bash
 source ~/.machome/rvm.bash
 source ~/.machome/lunchy.bash
 source ~/.machome/aquamacs.bash
@@ -19,6 +21,7 @@ source ~/.machome/rails.bash
 source ~/.machome/sshprompt.bash
 source ~/.machome/bundler_bash_completion.bash
 source ~/.machome/nvm.bash
+source ~/.machome/emacs.bash
 
 # bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
