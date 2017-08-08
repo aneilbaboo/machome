@@ -2,7 +2,7 @@ export PATH=~/.machome/bin:~/bin:/usr/local/bin:$PATH
 export EDITOR=emacs
 export PYTHONSTARTUP=~/.pythonrc.py
 
-source ~/bin/antigen.zsh
+source ~/.machome/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
