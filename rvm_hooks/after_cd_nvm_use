@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ -f ".nvmrc" ]; then
+  nvm use
+fi 
